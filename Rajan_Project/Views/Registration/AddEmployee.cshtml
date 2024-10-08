@@ -1,0 +1,88 @@
+﻿  @model Rajan_Project.Models.Employee_Reg
+  @{
+    ViewData["Title"] = "User Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+   }
+<style type="text/css">
+   h2{
+       color:red;
+       text-align:center;
+   }
+   form{
+    border:groove;
+    color:slategrey;
+    height:230px;
+   }
+</style>
+
+<h2>Employee Regisration</h2>
+
+<form method="post">
+<div class="row">
+    <div class="container-fluid">
+
+      <div class="col-md-12">
+        <div class="row jsutify-content">
+            <div class="col-md-4">
+                <input type="hidden" asp-for="Emp_id" />
+                <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter Your Name" />
+                <span asp-validation-for="Name" style="color:red;"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Age" class="control-label"></label>
+                    <input asp-for="Age" class="form-control" placeholder="Enter Your Age" />
+                <span asp-validation-for="Age" style="color:red;"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="Gender" class="control-label"></label>
+                    <input asp-for="Gender" class="form-control" placeholder="Enter Your Gender" />
+                <span asp-validation-for="Gender" style="color:red;"></span>
+            </div>
+        </div>                  
+    </div> 
+
+    <div class="col-md-12 mt-3">
+        <div class="row jsutify-content">
+            <div class="col-md-4">
+                <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Enter Your Email" />
+                <span asp-validation-for="Email" style="color:red;"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" placeholder="Enter Your Password" />
+                <span asp-validation-for="Password" style="color:red;"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="Department" class="control-label"></label>
+                    <input asp-for="Department" class="form-control" placeholder="Enter Department Name" />
+                <span asp-validation-for="Department" style="color:red;"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 mt-2">
+        <div class="row jsutify-content">
+            <div class="col-md-4">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" placeholder="Enter City Name" />
+                <span asp-validation-for="City" style="color:red;"></span>
+            </div>
+            <div class="col-md-4 mt-4">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+            <div class="col-md-4 mt-4">
+                        @if (ViewBag.msg != null)
+                        {
+                            <span style="color:red">@ViewBag.msg</span>
+                        }
+         </div>
+        </div>
+       </div>
+     </div>
+   </div>
+</form>

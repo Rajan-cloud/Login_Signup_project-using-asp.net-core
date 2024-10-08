@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Rajan_Project.Models.Account.User>
+@{
+    ViewData["Title"] = "User_data";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<h3 class="text-center text-dark">All User Data</h3>
+
+<table class="table table-hover">
+    <thead style="background-color:darkcyan">
+        <tr>
+            <th>@Html.DisplayNameFor(model=>model.Username)</th>
+            <th>@Html.DisplayNameFor(model=>model.Mobile)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Password)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model=>item.Username)</td>
+                <td>@Html.DisplayFor(model => item.Mobile)</td>
+                <td>@Html.DisplayFor(model => item.Email)</td>
+                <td>@Html.DisplayFor(model => item.Password)</td>
+            </tr>
+            
+        }
+    </tbody>
+  
+
+</table>
+

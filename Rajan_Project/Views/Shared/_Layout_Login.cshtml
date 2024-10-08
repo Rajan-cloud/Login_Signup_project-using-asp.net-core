@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rajan_Project</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Rajan_Project.styles.css" asp-append-version="true" />
+    <a href="~/lib/bootstrap/dist/css/bootstrap.css.map"></a>
+    <a href="~/lib/bootstrap/dist/css/bootstrap.min.css.map"></a>
+    <a href="~/lib/bootstrap/dist/css/bootstrap.rtl.css.map"></a>
+    <a href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"></a>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-light" style="background-color:lightskyblue">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="~/Image/Saumya_lab_logo.png" class="logo" alt="logo" />
+            </a>
+
+            @* <div id="msglog">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="navbar">
+                        <span>Welcome to </span><span class="text-dark p-2 font-weight:bold">@User.Identity.Name.ToUpper()</span>
+                        <a class="btn btn-sm btn-danger font-weight-bold" asp-action="Logout" asp-controller="Account">LogOut</a>
+                    </div>
+                }
+            </div> *@
+            <div id="ulnav">
+            <ul class="navbar-nv">
+                <li class="nav-item">
+                    <a class="btn btn-md btn-danger float-end" asp-action="User_data" asp-controller="Account">All User</a>
+                </li>
+
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="text-center">&copy; @DateTime.Now</div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

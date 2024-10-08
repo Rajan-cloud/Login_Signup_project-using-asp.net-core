@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rajan_Project</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Rajan_Project.styles.css" asp-append-version="true" />
+    <a href="~/lib/bootstrap/dist/css/bootstrap.css.map"></a>
+    <a href="~/lib/bootstrap/dist/css/bootstrap.min.css.map"></a>
+    <a href="~/lib/bootstrap/dist/css/bootstrap.rtl.css.map"></a>
+    <a href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"></a>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+             @*   <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Rajan_Project</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> *@
+                <div class="navbar-collapse collapse column-reverse justify-content-between" style="flex-direction:inherit">
+                    <div class="btn-group">
+                        <ul class="navbar-nav flex-grow-1" style="flex-direction:inherit">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Registration" asp-action="AddEmployee">Register User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="LoginController1" asp-action="Login">Login User</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Registration" asp-action="ShowData">User Data</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div id="msglog">
+                    @if(User.Identity.IsAuthenticated)
+                    {
+                       <div class="navbar float-end" >
+                           <span>Welcome to </span><span class="text-dark p-2 font-weight:bold">@User.Identity.Name.ToUpper()</span>
+                           <a class="btn btn-sm btn-danger font-weight-bold" asp-action="Logout" asp-controller="Account">LogOut</a>
+                       </div>
+                    }
+                    </div>
+
+                </div>  
+            </div>
+        </nav>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Rajan_Project - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
