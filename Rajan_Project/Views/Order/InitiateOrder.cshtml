@@ -1,0 +1,57 @@
+﻿@model Rajan_Project.Models.OrderEntity
+@{
+    ViewData["Title"] = "InitiateOrder";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+<div class="row">
+    <div class="col-md-4 offset-4 border border-primary rounded-1 p-3">
+        <h3 class="text-center text-primary">Payment Gateway </h3>
+        <form asp-action="InitiateOrder">
+            <div class="form-group">
+                <label asp-for="Customer_Name" class="form-label"></label>
+                <input asp-for="Customer_Name" class="form-control" />
+                <span asp-validation-for="Customer_Name" style="color:red"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="form-labe"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" style="color:red"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Mobile" class="form-labe"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" style="color:red"></span>
+
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="TotalAmmount" class="form-labe"></label>
+                <input asp-for="TotalAmmount" class="form-control" />
+                <span asp-validation-for="TotalAmmount" style="color:red"></span>
+
+            </div>
+
+
+            <div class="form-group mt-2">
+                <input type="submit" value="Continue To Pay" class="btn btn-dark rounded rounded-pill float-end" />
+            </div>
+
+        </form>
+        <div class="text-center">
+            @if(TempData["Error Message"]!=null)
+            {
+                <span class="text-center" style="color:red">@TempData["Error Message"]</span>
+            }
+           
+        </div>
+       
+
+    </div>
+
+</div>
+

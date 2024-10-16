@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Rajan_Project.Models.Account.User>
 @{
     ViewData["Title"] = "User_data";
-    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+    Layout = "~/Views/Shared/Account_Layout.cshtml";
 }
 
 <h3 class="text-center text-dark">All User Data</h3>
-
+<a class="btn btn-danger float-end" asp-area="" asp-controller="Account" asp-action="Logout">LogOut User</a>
 <table class="table table-hover">
     <thead style="background-color:darkcyan">
         <tr>

@@ -72,12 +72,12 @@ namespace Rajan_Project.Controllers.Account_Details
                         var principle = new ClaimsPrincipal(identity);
                         HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principle);
                         HttpContext.Session.SetString("Name", model.Username);
-                        //return RedirectToAction("User_data", "Account");
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("User_data", "Account");
+                        //return RedirectToAction("Index", "Home");
                     }
                     else
                     {
-                        TempData["error message"] = "Invailid User name and Password";
+                        TempData["errormessage"] = "Invailid User name and Password";
                         return View(model);
                     }
                 }

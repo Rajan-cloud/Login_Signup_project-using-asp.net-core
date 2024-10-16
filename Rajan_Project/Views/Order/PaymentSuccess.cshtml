@@ -1,0 +1,31 @@
+﻿@model Rajan_Project.Models.PaymentData
+@{
+    ViewData["Title"] = "Payment Data";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<div class="align-content-center">
+    <div class="text-center text-success">
+        <h3>Payment Received Successfully !!!</h3>
+    </div>
+    </<br />
+
+    <table class="table table-striped" width="10px">
+        <thead>
+            <tr>
+                <td><b>Transaction ID</b></td>
+                <td><b>Order ID</b></td>
+
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td>@Html.DisplayText("Transaction_Id")</td>
+                <td>@Html.DisplayText("Order_ID")</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
